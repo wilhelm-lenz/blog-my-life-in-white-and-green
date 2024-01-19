@@ -1,0 +1,27 @@
+[
+  {
+    "id": 2,
+    "title": "Schöner Titel9",
+    "featuredImage": "placeholder3",
+    "description": "Das ist me...",
+    "publishedAt": "2024-01-19T22:39:44.787Z",
+    "blogStatus": [
+      "published",
+      "draft",
+      "review",
+      "archived"
+    ],
+    "_uid": "6427b08d-0668-47f0-92a1-bfba3c5dd31b",
+    "content": "Das ist mein neunter Blog Post in Lang",
+    "author": "Maxi Musterfrau",
+    "categories": [
+      "Kultur",
+      "War"
+    ],
+    "seoKeywords": [
+      "Irgendwas",
+      "Rote Tümpel"
+    ],
+    "slug": "rote-schweiger"
+  }
+]

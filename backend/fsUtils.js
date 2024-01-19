@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const readFilePromise = (filePath) => {
+const readJSONFilePromise = (filePath) => {
   return new Promise((resolve, reject) => {
     fs.readFile(filePath, (err, data) => {
       if (err) reject(err);
@@ -9,7 +9,7 @@ const readFilePromise = (filePath) => {
   });
 };
 
-const writeFilePromise = (filePath, jsonObj) => {
+const writeJSONFilePromise = (filePath, jsonObj) => {
   return new Promise((resolve, reject) => {
     fs.writeFile(filePath, JSON.stringify(jsonObj, null, 2), (err) => {
       if (err) reject(err);
@@ -19,6 +19,6 @@ const writeFilePromise = (filePath, jsonObj) => {
 };
 
 module.exports = {
-  readFilePromise,
-  writeFilePromise,
+  readJSONFilePromise,
+  writeJSONFilePromise,
 };
