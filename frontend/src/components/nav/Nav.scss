@@ -1,0 +1,47 @@
+.section-navigation {
+  position: absolute;
+  width: 100%;
+  margin-top: 3rem;
+  z-index: 7;
+}
+
+.logo {
+  margin-right: auto;
+  font-size: 2.4rem;
+  text-transform: lowercase;
+  line-height: 1.3;
+}
+
+.white-color {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.green-color {
+  color: #087f5b;
+  text-transform: uppercase;
+}
+
+.nav-bar {
+  display: flex;
+  column-gap: 5rem;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #087f5b;
+  font-family: "Robote-Black";
+  padding-top: 0.8rem;
+  border-top: 3px solid transparent;
+  transition: all 0.5s ease-out;
+}
+
+.nav-bar a:not(.logo) {
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.nav-bar a:not(.logo):hover {
+  color: #fff;
+  border-top: 3px solid #fff;
+}

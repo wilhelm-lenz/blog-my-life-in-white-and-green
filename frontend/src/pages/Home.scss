@@ -1,0 +1,32 @@
+.header {
+  height: 100vh;
+  background: url("../../public/mountain-4.jpg") center center / cover no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+.header::after {
+  content: "";
+  background-color: rgba(33, 37, 41, 0.85);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.section-hero {
+  padding-top: 8rem;
+  position: relative;
+  z-index: 7;
+}
+
+.highlighting {
+  border-bottom: 5px solid #087f5b;
+  padding-bottom: 0.8rem;
+  text-transform: capitalize;
+  display: inline-block;
+  font-size: 7rem;
+  color: #087f5b;
+}
