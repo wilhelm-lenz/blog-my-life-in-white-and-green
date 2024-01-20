@@ -37,7 +37,7 @@ app.get("/api/allBlogPosts", (_, res) => {
 // --> für uploaded Files direkt mit richtigem Namen gespeichert werden, muss diskstorage bearbeitet werden:
 const attachmentStorage = multer.diskStorage({
   destination: "./uploads/",
-  filename: function (_, file, cb) {
+  filename: (_, file, cb) => {
     cb(null, `${Date.now()}-${file.originalname}`);
   },
 });
@@ -68,7 +68,7 @@ app.post(
       id: continuousId,
       title,
       content,
-      description: content.substring(0, 10) + "...",
+      description: content.substring(0, 160) + "...",
       author,
       publishedAt: publishedDate,
       categories,
@@ -100,53 +100,65 @@ app.post(
   }
 );
 
-app.patch("/api/allBlogPosts/:id/updatedBlogPost", (req, res) => {
-  const paramsId = req.params.id;
-  const { title, content, description, author, categories, seoKeywords, slug } =
-    req.body;
+app.patch(
+  "/api/allBlogPosts/:id/updatedBlogPost",
+  uploadMiddleware.single("attachment"),
+  (req, res) => {
+    const paramsId = req.params.id;
+    const {
+      title,
+      content,
+      description,
+      author,
+      categories,
+      seoKeywords,
+      slug,
+    } = req.body;
 
-  const updatedBlogPostObj = {
-    title,
-    content,
-    description,
-    author,
-    categories,
-    seoKeywords,
-    slug,
-  };
+    const updatedBlogPostObj = {
+      title,
+      content,
+      description,
+      author,
+      categories,
+      seoKeywords,
+      slug,
+    };
 
-  readJSONFilePromise("./blogPostsData.json")
-    .then((blogPosts) => {
-      const updatedBlogPosts = blogPosts.map((blogPost) =>
-        blogPost._uid === paramsId
-          ? {
-              ...blogPost,
-              title: updatedBlogPostObj.title,
-              content: updatedBlogPostObj.content,
-              description: updatedBlogPostObj.content.substring(0, 10) + "...",
-              author: updatedBlogPostObj.author,
-              categories: updatedBlogPostObj.categories,
-              seoKeywords: updatedBlogPostObj.seoKeywords,
-              slug: updatedBlogPostObj.slug,
-            }
-          : blogPost
-      );
-      return updatedBlogPosts;
-    })
-    .then((newBlogPostsArray) =>
-      writeJSONFilePromise("./blogPostsData.json", newBlogPostsArray).then(
-        (newBlogPostsArray) =>
-          res.status(OK).json({ success: true, articles: newBlogPostsArray })
+    readJSONFilePromise("./blogPostsData.json")
+      .then((blogPosts) => {
+        const updatedBlogPosts = blogPosts.map((blogPost) =>
+          blogPost._uid === paramsId
+            ? {
+                ...blogPost,
+                title: updatedBlogPostObj.title,
+                content: updatedBlogPostObj.content,
+                description:
+                  updatedBlogPostObj.content.substring(0, 160) + "...",
+                author: updatedBlogPostObj.author,
+                categories: updatedBlogPostObj.categories,
+                seoKeywords: updatedBlogPostObj.seoKeywords,
+                slug: updatedBlogPostObj.slug,
+              }
+            : blogPost
+        );
+        return updatedBlogPosts;
+      })
+      .then((newBlogPostsArray) =>
+        writeJSONFilePromise("./blogPostsData.json", newBlogPostsArray).then(
+          (newBlogPostsArray) =>
+            res.status(OK).json({ success: true, articles: newBlogPostsArray })
+        )
       )
-    )
-    .catch((err) => {
-      console.log(err);
-      res.status(INTERNAL_SERVER_ERROR).json({
-        success: false,
-        error: "Faild to delete blog post. Server Error",
+      .catch((err) => {
+        console.log(err);
+        res.status(INTERNAL_SERVER_ERROR).json({
+          success: false,
+          error: "Faild to delete blog post. Server Error",
+        });
       });
-    });
-});
+  }
+);
 
 app.delete("/api/allBlogPosts/:id", (req, res) => {
   const paramsId = req.params.id;

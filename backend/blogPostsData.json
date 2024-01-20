@@ -1,50 +1,28 @@
 [
   {
     "id": 1,
-    "title": "Schöner Titel99",
-    "content": "Das ist ein langer Blog Post von Wilhelm Lenz",
-    "description": "Das ist ei...",
-    "author": "Wilhelm Lenz",
-    "publishedAt": "2024-01-20T09:42:30.224Z",
-    "categories": [
-      "Geschichte",
-      "Krieg"
-    ],
-    "blogStatus": [
-      "published",
-      "draft",
-      "review",
-      "archived"
-    ],
-    "seoKeywords": [
-      "Bundesregierung",
-      "Rote Ampel"
-    ],
-    "_uid": "b65fed80-99a2-4507-a21d-fc9750d7afd8",
-    "attachment": "1705743750218-mountains2.jpg"
+    "title": "Wandern: Eine Reise durch die Natur",
+    "content": "Wandern ist mehr als nur ein einfacher Spaziergang; es ist eine Reise durch die vielfältigen Landschaften unserer Welt und eine Chance, die Schönheit der Natur hautnah zu erleben. Diese Freizeitaktivität bietet eine einzigartige Kombination aus körperlicher Betätigung, mentaler Entspannung und spiritueller Erneuerung. Die Faszination des Wanderns: Körperliche und geistige Gesundheit: Wandern stärkt nicht nur Muskeln und Kondition, sondern hilft auch beim Abbau von Stress und fördert die psychische Gesundheit. Verbindung mit der Natur: In einer Welt, die zunehmend von Technologie dominiert wird, bietet das Wandern eine seltene Gelegenheit, sich von Bildschirmen zu lösen und in die natürliche Umgebung einzutauchen. Entdeckung und Abenteuer: Jede Wanderung ist eine Entdeckungsreise. Egal, ob es sich um eine bekannte Route oder einen unerforschten Pfad handelt, es gibt immer etwas Neues zu sehen und zu erleben. Tipps für eine erfolgreiche Wanderung: Richtige Ausrüstung: Stellen Sie sicher, dass Sie bequeme Wanderschuhe, angemessene Kleidung und gegebenenfalls einen Wanderstock dabei haben. Vorbereitung ist der Schlüssel: Überprüfen Sie das Wetter, informieren Sie sich über die Route und packen Sie ausreichend Wasser und Snacks ein. Sicherheit geht vor: Informieren Sie jemanden über Ihre Wanderroute und den erwarteten Zeitplan, besonders wenn Sie alleine wandern. Wandern ist eine wunderbare Möglichkeit, sich selbst herauszufordern, gleichzeit",
+    "description": "Wandern ist mehr als nur ein einfacher Spaziergang; es ist eine Reise durch die vielfältigen Landschaften unserer Welt und eine Chance, die Schönheit der Natur ...",
+    "author": "Max Musterman",
+    "publishedAt": "2024-01-20T13:20:11.603Z",
+    "categories": ["Natur", "Wandern"],
+    "blogStatus": ["published", "draft", "review", "archived"],
+    "seoKeywords": ["Bergsteigen", "Berge"],
+    "_uid": "5fcfc195-2945-4d18-9971-5f9f8845427f",
+    "attachment": "1705757219334-mountain-2.jpg"
   },
   {
     "id": 2,
-    "title": "Schöner Titel99",
-    "content": "Das ist ein langer Blog Post von Wilhelm Lenz",
-    "description": "Das ist ei...",
+    "title": "Wandern: Eine Reise durch die Natur Wandern: Eine Reise durch die Natur Wandern: Eine Reise durch die Natur",
+    "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur",
+    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At v...",
     "author": "Wilhelm Lenz",
-    "publishedAt": "2024-01-20T09:43:10.360Z",
-    "categories": [
-      "Geschichte",
-      "Krieg"
-    ],
-    "blogStatus": [
-      "published",
-      "draft",
-      "review",
-      "archived"
-    ],
-    "seoKeywords": [
-      "Bundesregierung",
-      "Rote Ampel"
-    ],
-    "_uid": "69a7c801-dfed-41c0-800b-548fe1a72df0",
-    "attachment": "1705743790348-mountains.jpg"
+    "publishedAt": "2024-01-20T13:28:02.249Z",
+    "categories": ["Geschichte", "Krieg"],
+    "blogStatus": ["published", "draft", "review", "archived"],
+    "seoKeywords": ["Bundesregierung", "Rote Ampel"],
+    "_uid": "5a69b194-f9db-4f39-81fb-56f32849b5a3",
+    "attachment": "1705757282240-mountains.jpg"
   }
 ]

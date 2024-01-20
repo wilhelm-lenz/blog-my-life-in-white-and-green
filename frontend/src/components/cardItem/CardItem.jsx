@@ -1,21 +1,45 @@
 import "./CardItem.scss";
 import Button from "../buttons/Button";
 import { Link } from "react-router-dom";
+import CalenderMain from "../images/CalenderMain";
 
-const CardItem = ({ id, blogTitle, imgUrl, author }) => {
+const CardItem = ({
+  attachment,
+  author,
+  blogStatus,
+  categories,
+  content,
+  description,
+  id,
+  publishedAt,
+  seoKeywords,
+  title,
+  _uid,
+}) => {
+  const date = new Date(publishedAt);
+  const day = date.getDate();
+  const month = date.toLocaleString("default", { month: "long" });
+  const fullYear = date.getFullYear();
+  const publishedDate = `${day}. ${month} ${fullYear}`;
+
   return (
-    <article className="card-item">
-      <img
-        src={imgUrl}
-        alt={"Picture taken by " + author}
-        className="card-item-image"
-      />
+    <>
+      <Link to={`/blog/${_uid}`}>
+        <article className="card-item">
+          <img
+            src={`http://localhost:3066/${attachment}`}
+            alt={"Picture taken by " + author}
+            className="card-item-image"
+          />
 
-      <h3 className="card-item-title">{blogTitle}</h3>
-      <Link to={`/blog/${id}`}>
-        <Button contentText={"Read more"} />
+          <h3 className="card-item-title">{title}</h3>
+          <p className="card-item-description">{description}</p>
+          <p className="published-date">
+            {<CalenderMain />} {publishedDate}
+          </p>
+        </article>
       </Link>
-    </article>
+    </>
   );
 };
 

@@ -7,7 +7,7 @@
 
 .header::after {
   content: "";
-  background-color: rgba(33, 37, 41, 0.85);
+  background-color: rgba(33, 37, 41, 0.75);
   position: absolute;
   top: 0;
   left: 0;
@@ -23,10 +23,10 @@
 }
 
 .highlighting {
-  border-bottom: 5px solid #087f5b;
+  border-bottom: 5px solid #37b24d;
   padding-bottom: 0.8rem;
   text-transform: capitalize;
   display: inline-block;
   font-size: 7rem;
-  color: #087f5b;
+  color: #37b24d;
 }

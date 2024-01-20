@@ -1,11 +1,21 @@
 @font-face {
-  font-family: "Robote-Black";
-  src: url("./assets/fonts/Roboto-Black.ttf");
+  font-family: "OpenSans-ExtraBold";
+  src: url("./assets/fonts/OpenSans-ExtraBold.ttf");
 }
 
 @font-face {
-  font-family: "Robote-Regular";
-  src: url("./assets/fonts/Roboto-Regular.ttf");
+  font-family: "OpenSans-Bold";
+  src: url("./assets/fonts/OpenSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: "OpenSans-Medium";
+  src: url("./assets/fonts/OpenSans-Medium.ttf");
+}
+
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url("./assets/fonts/OpenSans-Regular.ttf");
 }
 
 * {
@@ -22,11 +32,11 @@ html {
 }
 
 body {
-  font-family: "Robote-Regular";
+  font-family: "OpenSans-Regular";
   line-height: 1;
   font-weight: 400;
   color: #555;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   background-color: rgb(33, 37, 41);
 }
 
@@ -34,6 +44,20 @@ body {
   max-width: 144rem;
   padding-inline: 5%;
   margin: 0 auto;
+}
+
+a {
+  color: #fff;
+}
+
+a:link {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:active {
+  text-decoration: none;
+  color: #fff;
 }
 
 img {

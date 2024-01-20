@@ -7,29 +7,50 @@
   backdrop-filter: blur(5.8px);
   -webkit-backdrop-filter: blur(5.8px);
   transition: all 0.5s ease-out;
-}
+  min-height: 100%;
 
-.card-item:hover {
-  transform: rotate3d(1, 2, 1, 10deg) scale(1.1);
-  box-shadow: 0 5px 10px #087f5b;
-}
+  &:hover {
+    transform: rotate3d(1, 2, 1, 8deg) scale(1.1);
+    box-shadow: 0 5px 10px #087f5b;
+  }
 
-.card-item-image {
-  max-width: auto;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 1rem 1rem 0 0;
-}
+  &:active {
+    outline: none;
+  }
 
-.card-item-title {
-  font-family: "Robote-Black";
-  margin-top: 2.4rem;
-  padding-inline: 5%;
-  color: #fff;
-}
+  .card-item-image {
+    max-width: auto;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 0;
+  }
 
-.card-item .cta-btn {
-  margin-inline: 5%;
-  padding-inline: 3%;
-  margin-top: 3rem;
+  .card-item-title {
+    font-family: "Robote-Black";
+    font-size: 2rem;
+    margin-top: 2.4rem;
+    padding-inline: 5%;
+    color: #fff;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-item-description {
+    font-size: 1.6rem;
+    margin-inline: 5%;
+    margin-top: 3rem;
+  }
+
+  .published-date {
+    display: flex;
+    align-items: center;
+    column-gap: 0.8rem;
+    font-size: 1.6rem;
+    margin-inline: 5%;
+    margin-top: 3rem;
+  }
 }

@@ -11,6 +11,7 @@ const Nav = () => {
         </Link>
         <Link to="/">Home</Link>
         <Link to="/blog">Blog</Link>
+        <Link to="/admin">Admin</Link>
       </nav>
     </section>
   );

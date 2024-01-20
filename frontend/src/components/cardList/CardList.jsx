@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
-
 import CardItem from "../cardItem/CardItem";
 
 import "./CardList.scss";
@@ -8,19 +6,35 @@ import { BlogPostsContext } from "../../contexts/blogPostsContext";
 
 const CardList = () => {
   const { blogPosts } = useContext(BlogPostsContext);
-  console.log(blogPosts);
+
   return (
     <section className="card-list container">
       {blogPosts?.map((blogPostObj) => {
-        console.log(blogPostObj);
-        const { id, title, img_url, author } = blogPostObj;
+        const {
+          attachment,
+          author,
+          blogStatus,
+          categories,
+          content,
+          description,
+          publishedAt,
+          seoKeywords,
+          title,
+          _uid,
+        } = blogPostObj;
         return (
           <CardItem
-            key={uuidv4()}
-            id={id}
-            blogTitle={title}
-            imgUrl={img_url}
+            key={_uid}
+            _uid={_uid}
+            attachment={attachment}
             author={author}
+            blogStatus={blogStatus}
+            categories={categories}
+            content={content}
+            description={description}
+            publishedAt={publishedAt}
+            seoKeywords={seoKeywords}
+            title={title}
           />
         );
       })}
