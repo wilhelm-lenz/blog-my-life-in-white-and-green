@@ -1,27 +1,50 @@
 [
   {
-    "id": 2,
-    "title": "Schöner Titel9",
-    "featuredImage": "placeholder3",
-    "description": "Das ist me...",
-    "publishedAt": "2024-01-19T22:39:44.787Z",
+    "id": 1,
+    "title": "Schöner Titel99",
+    "content": "Das ist ein langer Blog Post von Wilhelm Lenz",
+    "description": "Das ist ei...",
+    "author": "Wilhelm Lenz",
+    "publishedAt": "2024-01-20T09:42:30.224Z",
+    "categories": [
+      "Geschichte",
+      "Krieg"
+    ],
     "blogStatus": [
       "published",
       "draft",
       "review",
       "archived"
     ],
-    "_uid": "6427b08d-0668-47f0-92a1-bfba3c5dd31b",
-    "content": "Das ist mein neunter Blog Post in Lang",
-    "author": "Maxi Musterfrau",
+    "seoKeywords": [
+      "Bundesregierung",
+      "Rote Ampel"
+    ],
+    "_uid": "b65fed80-99a2-4507-a21d-fc9750d7afd8",
+    "attachment": "1705743750218-mountains2.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Schöner Titel99",
+    "content": "Das ist ein langer Blog Post von Wilhelm Lenz",
+    "description": "Das ist ei...",
+    "author": "Wilhelm Lenz",
+    "publishedAt": "2024-01-20T09:43:10.360Z",
     "categories": [
-      "Kultur",
-      "War"
+      "Geschichte",
+      "Krieg"
+    ],
+    "blogStatus": [
+      "published",
+      "draft",
+      "review",
+      "archived"
     ],
     "seoKeywords": [
-      "Irgendwas",
-      "Rote Tümpel"
+      "Bundesregierung",
+      "Rote Ampel"
     ],
-    "slug": "rote-schweiger"
+    "_uid": "69a7c801-dfed-41c0-800b-548fe1a72df0",
+    "attachment": "1705743790348-mountains.jpg"
   }
 ]

@@ -29,3 +29,7 @@ app.use((_, res) => {
 const PORT = 3067;
 const HOST = "127.0.0.1";
 app.listen(PORT, HOST, () => console.log(`Server run on ${HOST}:${PORT}`));
+
+module.exports = {
+  uploadFile,
+};

@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
-import blogData from "../../data/blogData";
 import "./BlogPost.scss";
+import { useContext } from "react";
+import { BlogPostsContext } from "../../contexts/blogPostsContext";
 
 const BlogPost = () => {
+  const { blogPosts } = useContext(BlogPostsContext);
   const idOfBlogPost = Number(useParams().id);
-  const user = blogData.filter(
+  const user = blogPosts.filter(
     (singleUserObj) => singleUserObj.id === idOfBlogPost
   );
   const { img_url, title, description, author, published_date } = user[0];

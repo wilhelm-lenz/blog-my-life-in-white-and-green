@@ -2,9 +2,12 @@ const express = require("express");
 const cors = require("cors");
 const logger = require("morgan");
 const { v4: uuidv4 } = require("uuid");
-const blogPosts = require("./blogPostsData.json");
+const multer = require("multer");
 
+const blogPosts = require("./blogPostsData.json");
 const { readJSONFilePromise, writeJSONFilePromise } = require("./fsUtils");
+
+// const uploadFileWithDestination = multer({ dest: "./uploads" });
 
 const app = express();
 
@@ -15,10 +18,12 @@ app.use(cors()); // Cors policy
 app.use(logger("dev")); // logging request information
 app.use(express.json()); // body parser for all incoming requests
 
+app.use(express.static("uploads"));
+
 app.get("/api/allBlogPosts", (_, res) => {
   readJSONFilePromise("./blogPostsData.json")
     .then((blogPosts) => {
-      res.status(OK).json({ success: true, result: blogPosts });
+      res.status(OK).json({ success: true, articles: blogPosts });
     })
     .catch((err) => {
       console.log(err);
@@ -29,66 +34,81 @@ app.get("/api/allBlogPosts", (_, res) => {
     });
 });
 
-app.post("/api/allBlogPosts", (req, res) => {
-  const publishedDate = new Date(Date.now());
-  let continuousId = 0;
-  let isblogPostsArrayEmpty = blogPosts.length === 0;
-
-  if (isblogPostsArrayEmpty) {
-    continuousId = 1;
-  } else {
-    continuousId = blogPosts[blogPosts.length - 1]?.id + 1;
-  }
-  console.log(continuousId);
-  const {
-    title,
-    featuredImage,
-    content,
-    author,
-    categories,
-    seoKeywords,
-    slug,
-  } = req.body;
-
-  const newBlogPost = {
-    id: continuousId,
-    title,
-    featuredImage,
-    content,
-    description: content.substring(0, 10) + "...",
-    author,
-    publishedAt: publishedDate,
-    categories,
-    blogStatus: ["published", "draft", "review", "archived"],
-    seoKeywords,
-    slug,
-    _uid: uuidv4(),
-  };
-
-  readJSONFilePromise("./blogPostsData.json")
-    .then((blogPosts) => [...blogPosts, newBlogPost])
-    .then((newBlogPostsArray) =>
-      writeJSONFilePromise("./blogPostsData.json", newBlogPostsArray)
-    )
-    .then((newBlogPostsArray) =>
-      res.status(OK).json({ success: true, articles: newBlogPostsArray })
-    )
-    .catch((err) => {
-      console.log(err);
-      res.status(INTERNAL_SERVER_ERROR).json({
-        success: false,
-        error: "Faild to add Blog Posts. Server Error",
-      });
-    });
+// --> für uploaded Files direkt mit richtigem Namen gespeichert werden, muss diskstorage bearbeitet werden:
+const attachmentStorage = multer.diskStorage({
+  destination: "./uploads/",
+  filename: function (_, file, cb) {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
 });
+
+// // --> MULTER-MIDDLEWARE erstellen mit angaben für storage:
+const uploadMiddleware = multer({ storage: attachmentStorage });
+
+// const uploadMiddleware = multer({ dest: "./uploads" });
+
+app.post(
+  "/api/allBlogPosts",
+  uploadMiddleware.single("attachment"),
+  (req, res) => {
+    console.log(req.body);
+    console.log(req.file);
+    const publishedDate = new Date(Date.now());
+    let continuousId = 0;
+    let isblogPostsArrayEmpty = blogPosts.length === 0;
+    if (isblogPostsArrayEmpty) {
+      continuousId = 1;
+    } else {
+      continuousId = blogPosts[blogPosts.length - 1]?.id + 1;
+    }
+
+    const { title, content, author, categories, seoKeywords, slug } = req.body;
+
+    const newBlogPost = {
+      id: continuousId,
+      title,
+      content,
+      description: content.substring(0, 10) + "...",
+      author,
+      publishedAt: publishedDate,
+      categories,
+      blogStatus: ["published", "draft", "review", "archived"],
+      seoKeywords,
+      slug,
+      _uid: uuidv4(),
+    };
+
+    if (req.file) {
+      newBlogPost.attachment = req.file.filename;
+    }
+
+    readJSONFilePromise("./blogPostsData.json")
+      .then((blogPosts) => [...blogPosts, newBlogPost])
+      .then((newBlogPostsArray) =>
+        writeJSONFilePromise("./blogPostsData.json", newBlogPostsArray)
+      )
+      .then((newBlogPostsArray) =>
+        res.status(OK).json({ success: true, articles: newBlogPostsArray })
+      )
+      .catch((err) => {
+        console.log(err);
+        res.status(INTERNAL_SERVER_ERROR).json({
+          success: false,
+          error: "Faild to add Blog Posts. Server Error",
+        });
+      });
+  }
+);
 
 app.patch("/api/allBlogPosts/:id/updatedBlogPost", (req, res) => {
   const paramsId = req.params.id;
-  const { title, content, author, categories, seoKeywords, slug } = req.body;
+  const { title, content, description, author, categories, seoKeywords, slug } =
+    req.body;
 
   const updatedBlogPostObj = {
     title,
     content,
+    description,
     author,
     categories,
     seoKeywords,
@@ -103,6 +123,7 @@ app.patch("/api/allBlogPosts/:id/updatedBlogPost", (req, res) => {
               ...blogPost,
               title: updatedBlogPostObj.title,
               content: updatedBlogPostObj.content,
+              description: updatedBlogPostObj.content.substring(0, 10) + "...",
               author: updatedBlogPostObj.author,
               categories: updatedBlogPostObj.categories,
               seoKeywords: updatedBlogPostObj.seoKeywords,
