@@ -53,6 +53,7 @@ const BlogPostDetails = () => {
                   <Link
                     className="sidebar-links"
                     to={`/blog/${filteredBlogPost._uid}`}
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     {filteredBlogPost.title}
                   </Link>
