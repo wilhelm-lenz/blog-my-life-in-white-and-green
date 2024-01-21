@@ -52,7 +52,6 @@ Admin Page
 
 ### Links
 
-- Solution URL: [GitHub Repo](https://github.com/wilhelm-lenz/blog-my-life-in-white-and-green)
 - Solution URL: [backend](https://github.com/wilhelm-lenz/blog-my-life-in-white-and-green/tree/main/backend)
 - Solution URL: [frontend](https://github.com/wilhelm-lenz/blog-my-life-in-white-and-green/tree/main/frontend)
 
