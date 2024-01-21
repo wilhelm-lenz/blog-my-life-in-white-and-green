@@ -54,6 +54,7 @@ app.post(
     console.log(req.body);
     console.log(req.file);
     const publishedDate = new Date(Date.now());
+
     let continuousId = 0;
     let isblogPostsArrayEmpty = blogPosts.length === 0;
     if (isblogPostsArrayEmpty) {
@@ -71,9 +72,11 @@ app.post(
       description: content.substring(0, 160) + "...",
       author,
       publishedAt: publishedDate,
-      categories,
+      categories: categories.split(",").map((categorie) => categorie.trim()),
       blogStatus: ["published", "draft", "review", "archived"],
-      seoKeywords,
+      seoKeywords: seoKeywords
+        .split(",")
+        .map((seoKeyword) => seoKeyword.trim()),
       slug,
       _uid: uuidv4(),
     };

@@ -1,31 +1,23 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./BlogPostDetails.scss";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { BlogPostsContext } from "../contexts/blogPostsContext";
-import CalenderMain from "../components/images/CalenderMain";
+import CalenderMain from "../components/svg/CalenderMain";
 
 const BlogPostDetails = () => {
-  const { blogPosts } = useContext(BlogPostsContext);
   const { id: idOfBlogPost } = useParams();
-  console.log(blogPosts);
-  console.log(idOfBlogPost);
-  const blogPost = blogPosts.filter(
-    (singleBlogObj) => singleBlogObj._uid === idOfBlogPost
+  const { blogPosts } = useContext(BlogPostsContext);
+
+  const blogPost = blogPosts?.filter(
+    (singleBlogObj) => singleBlogObj?._uid === idOfBlogPost
   );
-  console.log(blogPost);
-  const {
-    attachment,
-    author,
-    blogStatus,
-    categories,
-    content,
-    description,
-    id,
-    publishedAt,
-    seoKeywords,
-    title,
-    _uid,
-  } = blogPost[0];
+
+  if (!blogPost[0]) {
+    return;
+  }
+
+  const { attachment, author, categories, content, publishedAt, title } =
+    blogPost[0];
 
   const date = new Date(publishedAt);
   const day = date.getDate();
@@ -51,7 +43,23 @@ const BlogPostDetails = () => {
         </p>
         <div className="content-wrapper">
           <p className="blog-post-content">{content}</p>
-          <aside className="sidebar">gdfsgds</aside>
+          <aside className="sidebar">
+            <span className="heading-tertiary">Latest posts</span>
+            {blogPosts
+              .filter((blogPost) => blogPost._uid !== idOfBlogPost)
+              .map((filteredBlogPost) => (
+                <div className="link-wrapper">
+                  <span className="list-link-styler"></span>
+                  <Link
+                    className="sidebar-links"
+                    key={filteredBlogPost._uid}
+                    to={`/blog/${filteredBlogPost._uid}`}
+                  >
+                    {filteredBlogPost.title}
+                  </Link>
+                </div>
+              ))}
+          </aside>
         </div>
       </section>
     </>

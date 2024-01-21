@@ -43,7 +43,7 @@
 
   .content-wrapper {
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 70% 30%;
 
     .blog-post-content {
       align-self: flex-start;
@@ -59,10 +59,33 @@
       bottom: 20%;
       height: 80vh;
       margin-block: 4rem 6rem;
-      background-color: red;
-      margin-top: 8rem;
+      background-color: #fff;
+
       border-radius: 0.8rem;
       padding: 2rem;
+      display: flex;
+      flex-direction: column;
+
+      .link-wrapper {
+        display: flex;
+        align-items: center;
+        column-gap: 0.8rem;
+        padding-bottom: 0.8rem;
+        .list-link-styler {
+          height: 0.8rem;
+          width: 0.8rem;
+          background-color: rgb(33, 37, 41);
+        }
+
+        .sidebar-links {
+          line-height: 1.5;
+          color: rgb(33, 37, 41);
+          font-size: 1.6rem;
+        }
+        .sidebar-links:hover {
+          color: #37b24d;
+        }
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 import "./CardItem.scss";
 import Button from "../buttons/Button";
 import { Link } from "react-router-dom";
-import CalenderMain from "../images/CalenderMain";
+import CalenderMain from "../svg/CalenderMain";
 
 const CardItem = ({
   attachment,

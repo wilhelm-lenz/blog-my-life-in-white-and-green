@@ -1,0 +1,105 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 16rem;
+
+  .author-file-wrapper {
+    display: flex;
+    width: 70%;
+    column-gap: 2rem;
+
+    & label:first-child {
+      width: 60%;
+    }
+
+    & label:last-child {
+      width: 55%;
+    }
+  }
+
+  label {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    font-family: "OpenSans-Medium";
+    color: #37b24d;
+  }
+
+  input {
+    margin-top: 0.8rem;
+    font-size: 1.8rem;
+    padding: 1.6rem 0.8rem;
+    border: none;
+    border-radius: 0.8rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .inputfile[type="file"]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #37b24d;
+    padding: 1.8rem 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+
+    &[type="file"]::file-selector-button:hover {
+      background: #37b24d;
+    }
+  }
+
+  .choose-file {
+    display: flex;
+    align-items: center;
+  }
+
+  textarea {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 40rem;
+    max-height: 40rem;
+    margin-top: 0.8rem;
+    font-size: 1.8rem;
+    padding: 0.8rem 0.8rem;
+    border: none;
+    border-radius: 0.8rem;
+
+    &:focus {
+      outline: non;
+    }
+  }
+
+  .categories-seoKeywords-wrapper {
+    display: flex;
+    width: 70%;
+    column-gap: 2rem;
+
+    .multiply-words-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .multiply-words {
+      color: #fff;
+      font-size: 1.4rem;
+    }
+  }
+
+  .add-blog-post-btn {
+    width: 70%;
+    font-family: "OpenSans-Medium";
+    font-size: 1.8rem;
+    padding-block: 1.6rem;
+    background-color: #37b24d;
+    color: #fff;
+    border: none;
+    border-radius: 0.8rem;
+  }
+}
