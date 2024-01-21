@@ -8,10 +8,12 @@
   -webkit-backdrop-filter: blur(5.8px);
   transition: all 0.5s ease-out;
   min-height: 100%;
+  position: relative;
 
   &:hover {
-    transform: rotate3d(1, 2, 1, 8deg) scale(1.1);
+    transform: rotate3d(1, 2, 1, 8deg) scale(1.05);
     box-shadow: 0 5px 10px #087f5b;
+    cursor: pointer;
   }
 
   &:active {
@@ -50,7 +52,26 @@
     align-items: center;
     column-gap: 0.8rem;
     font-size: 1.6rem;
-    margin-inline: 5%;
+    padding-inline: 5%;
     margin-top: 3rem;
+  }
+
+  .delete-todo {
+    position: absolute;
+    bottom: 2rem;
+    right: 5%;
+    fill: #ffffff70;
+    z-index: 7;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+  }
+
+  &:hover .delete-todo {
+    opacity: 1;
+  }
+
+  .delete-todo:hover {
+    fill: #087f5b;
+    cursor: pointer;
   }
 }

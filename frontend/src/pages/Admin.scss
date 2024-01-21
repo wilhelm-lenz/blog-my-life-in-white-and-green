@@ -50,7 +50,7 @@
     transition: background 0.2s ease-in-out;
 
     &[type="file"]::file-selector-button:hover {
-      background: #37b24d;
+      background: #37b24d70;
     }
   }
 
@@ -101,5 +101,11 @@
     color: #fff;
     border: none;
     border-radius: 0.8rem;
+    transition: all 0.5s ease-out;
+  }
+
+  .add-blog-post-btn:hover {
+    cursor: pointer;
+    background-color: #37b24d70;
   }
 }

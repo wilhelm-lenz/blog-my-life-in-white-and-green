@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { BlogPostsContext } from "../../contexts/blogPostsContext";
 
 const CardList = () => {
-  const { blogPosts } = useContext(BlogPostsContext);
+  const { blogPosts, setBlogPosts } = useContext(BlogPostsContext);
 
   return (
     <section className="card-list container">
@@ -35,6 +35,7 @@ const CardList = () => {
             publishedAt={publishedAt}
             seoKeywords={seoKeywords}
             title={title}
+            updateTodosArray={setBlogPosts}
           />
         );
       })}

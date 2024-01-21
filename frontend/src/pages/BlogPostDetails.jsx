@@ -48,11 +48,10 @@ const BlogPostDetails = () => {
             {blogPosts
               .filter((blogPost) => blogPost._uid !== idOfBlogPost)
               .map((filteredBlogPost) => (
-                <div className="link-wrapper">
+                <div key={filteredBlogPost._uid} className="link-wrapper">
                   <span className="list-link-styler"></span>
                   <Link
                     className="sidebar-links"
-                    key={filteredBlogPost._uid}
                     to={`/blog/${filteredBlogPost._uid}`}
                   >
                     {filteredBlogPost.title}
