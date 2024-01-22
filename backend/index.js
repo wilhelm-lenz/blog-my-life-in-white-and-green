@@ -3,6 +3,15 @@ const cors = require("cors");
 const logger = require("morgan");
 const { v4: uuidv4 } = require("uuid");
 const multer = require("multer");
+const dotenv = require("dotenv");
+const {
+  filterCategories,
+  filterTitle,
+  filterContent,
+  filterAuthor,
+} = require("./filterBlogPosts");
+
+dotenv.config();
 
 const blogPosts = require("./blogPostsData.json");
 const { readJSONFilePromise, writeJSONFilePromise } = require("./fsUtils");
@@ -20,10 +29,22 @@ app.use(express.json()); // body parser for all incoming requests
 
 app.use(express.static("uploads"));
 
-app.get("/api/allBlogPosts", (_, res) => {
+app.get("/api/allBlogPosts", (req, res) => {
+  const category = req.query.category;
+  const title = req.query.title;
+  const content = req.query.content;
+  const author = req.query.author;
+  // const publishedAt = req.query.publishedAt;
+
   readJSONFilePromise("./blogPostsData.json")
     .then((blogPosts) => {
-      res.status(OK).json({ success: true, articles: blogPosts });
+      const updatedBlogPosts = blogPosts
+        .filter((blogPost) => filterCategories(blogPost, category))
+        .filter((blogPost) => filterTitle(blogPost, title))
+        .filter((blogPost) => filterContent(blogPost, content))
+        .filter((blogPost) => filterAuthor(blogPost, author));
+      // .filter((blogPost) => filterPublishedAt(blogPost, publishedAt))
+      res.status(OK).json({ success: true, articles: updatedBlogPosts });
     })
     .catch((err) => {
       console.log(err);
@@ -42,7 +63,7 @@ const attachmentStorage = multer.diskStorage({
   },
 });
 
-// // --> MULTER-MIDDLEWARE erstellen mit angaben für storage:
+// --> MULTER-MIDDLEWARE erstellen mit angaben für storage:
 const uploadMiddleware = multer({ storage: attachmentStorage });
 
 // const uploadMiddleware = multer({ dest: "./uploads" });
@@ -193,7 +214,7 @@ app.use((_, res) => {
   res.status(404).json({ success: false, error: "Route not found" });
 });
 
-const PORT = 3066;
+const PORT = process.env.PORT;
 const HOST = "127.0.0.1";
 
 app.listen(PORT, HOST, () => console.log(`Server run on ${HOST}:${PORT}`));

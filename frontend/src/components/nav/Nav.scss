@@ -29,7 +29,7 @@
 
 .nav-bar a {
   text-decoration: none;
-  color: #37b24d;
+  color: #777;
   font-family: "OpenSans-Bold";
   padding-top: 0.8rem;
   border-top: 3px solid transparent;
@@ -39,9 +39,10 @@
 .nav-bar a:not(.logo) {
   font-size: 2rem;
   line-height: 1.3;
+  color: #fff;
 }
 
 .nav-bar a:not(.logo):hover {
-  color: #fff;
-  border-top: 3px solid #fff;
+  color: #37b24d;
+  border-top: 3px solid #37b24d;
 }
