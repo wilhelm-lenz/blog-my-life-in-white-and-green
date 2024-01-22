@@ -44,6 +44,9 @@ Home Page
 Blog Page
 ![](./frontend//public/screenshots-for-readme/screenshot-blog-page.png)
 
+Blog Page with autocomplete Searchbar
+![](./frontend/public/screenshots-for-readme/screenshot-desktop-with-autocomplete-search-bar.png)
+
 Blog Detail Page
 ![](./frontend//public/screenshots-for-readme/screenshot-blog-detail-page.png)
 
