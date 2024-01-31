@@ -22,7 +22,7 @@ const Admin = () => {
       formData.append("attachment", attachment, attachment.name);
     }
 
-    fetch("http://localhost:3066/api/allBlogPosts", {
+    fetch("http://localhost:3066/api/v1/allBlogPosts", {
       method: "POST",
       body: formData,
     })

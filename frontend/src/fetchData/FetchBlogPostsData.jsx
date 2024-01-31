@@ -8,7 +8,7 @@ const FetchBlogPostsData = () => {
   useEffect(() => {
     async function fetchByQuerySelection() {
       const res = await fetch(
-        `http://localhost:3066/api/allBlogPosts?${queryTerm}=${searchTerm}`,
+        `http://localhost:3066/api/v1/allBlogPosts?${queryTerm}=${searchTerm}`,
         {
           method: "GET",
         }

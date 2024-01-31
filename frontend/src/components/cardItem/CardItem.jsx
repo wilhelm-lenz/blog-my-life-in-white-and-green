@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import "./CardItem.scss";
-import Button from "../buttons/Button";
 import { Link } from "react-router-dom";
 import CalenderMain from "../svg/CalenderMain";
 import TrashIcon from "../svg/TrashIcon";
@@ -13,7 +14,7 @@ const CardItem = ({
   description,
   id,
   publishedAt,
-  seoKeywords,
+  // seoKeywords,
   title,
   _uid,
   updateTodosArray,
@@ -25,7 +26,7 @@ const CardItem = ({
   const publishedDate = `${day}. ${month} ${fullYear}`;
 
   const deleteTodo = () => {
-    fetch(`http://localhost:3066/api/allBlogPosts/${_uid}`, {
+    fetch(`http://localhost:3066/api/v1/allBlogPosts/${_uid}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
